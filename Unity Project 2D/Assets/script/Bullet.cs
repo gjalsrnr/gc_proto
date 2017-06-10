@@ -8,23 +8,13 @@ public class Bullet : MonoBehaviour {
     public float damage;
     private bool fire;
     //public float lifeTime? distance?
-
-    public float Speed
-    {
-        get
-        {
-            return speed;
-        }
-        set
-        {
-            speed = value;
-        }
-    }
-
-	// Use this for initialization
-	void Start () {
+    public GameObject player;
+    private PlayerControll playerControll;
+    // Use this for initialization
+    void Start () {
         speed = 3.0f;
         fire = false;
+        playerControll = player.GetComponent<PlayerControll>();
 	}
 	
 	// Update is called once per frame
@@ -33,5 +23,5 @@ public class Bullet : MonoBehaviour {
         //   fire = true;
         //if(fire)
         this.transform.Translate(speed * Time.deltaTime, 0, 0, Space.Self);
-	}
+        }
 }
